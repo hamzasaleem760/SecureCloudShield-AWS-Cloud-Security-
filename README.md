@@ -46,7 +46,7 @@ Clone the repository:
 
 Bash
 
-git clone https://github.com/Hani-Vj/SecureCloudShield.git
+git clone git@github.com:hamzasaleem760/SecureCloudShield-AWS-Cloud-Security-.git
 cd SecureCloudShield
 Initialize Terraform:
 

@@ -1,0 +1,44 @@
+SecureCloudShield – Numbered Pseudo-Diagram
+
+1. Terraform code (main.tf) is written to define cloud infrastructure.
+
+2. Terraform apply command is executed.
+
+3. AWS infrastructure is automatically provisioned:
+   3.1 Virtual Private Cloud (VPC)
+   3.2 EC2 instances
+   3.3 Security Groups (firewall rules)
+   3.4 GuardDuty enabled for threat detection
+
+4. Authorized administrator attempts access.
+   4.1 Access is allowed only using SSH key-based authentication.
+
+5. Administrator connects to the Bastion Host in the public DMZ.
+
+6. Identity is verified using Security Group chaining.
+
+7. After verification, access is forwarded to the Private Application Server.
+
+8. External attacker or scanner attempts port scanning or brute-force attack.
+
+9. Security Groups evaluate incoming traffic.
+
+10. Malicious or unauthorized traffic is dropped automatically.
+
+11. GuardDuty continuously monitors AWS activity logs.
+
+12. If suspicious activity is detected, GuardDuty generates a finding.
+
+13. AWS Budgets monitors cloud cost usage.
+    13.1 If cost exceeds defined threshold (> $0.01), an alert is generated.
+
+14. EventBridge receives security and budget events.
+
+15. EventBridge routes events to the response system.
+
+16. SNS topic is triggered for notification.
+
+17. Alert email is sent to the administrator.
+
+18. Administrator takes corrective or remediation action.
+

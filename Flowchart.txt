@@ -1,0 +1,70 @@
+===========================================================
+ SecureCloudShield : Operational Workflow & Incident Response
+===========================================================
+
+
+..................... 1. AUTOMATED DEPLOYMENT (IaC) .....................
+
+[ Terraform Code (main.tf) ]
+              |
+              v
+[ terraform apply ]
+              |
+              v
+[ AWS Infrastructure Provisioned ]
+              |
+              +--> [ VPC ]
+              +--> [ EC2 Instances ]
+              +--> [ Security Groups ]
+              +--> [ GuardDuty Enabled ]
+
+
+..................... 2. ZERO TRUST OPERATION (ACCESS & PREVENTION) .....................
+
+[ Authorized Admin ]
+        |
+        |  (SSH - Key Authentication)
+        v
+[ Bastion Host (Public DMZ) ]
+        |
+        |  (Identity Verification / SG Chaining)
+        v
+[ Private App Server (Isolated) ]
+
+
+[ Attacker / Scanner ]
+        |
+        |  (Port Scan / Brute Force)
+        v
+[ Security Groups (Firewall) ]
+        |
+        X  ----->  TRAFFIC DROPPED
+
+
+..................... 3. DETECTION & RESPONSE PIPELINE .....................
+
+[ GuardDuty ]
+        |
+        |  (Threat Detection)
+        v
+[ EventBridge ]
+        |
+        |  (Trigger Alert)
+        v
+[ SNS Topic ]
+        |
+        |  (Notification)
+        v
+[ Admin Email Alert ]
+
+
+[ AWS Budgets ]
+        |
+        |  (Cost Threshold > $0.01)
+        v
+[ EventBridge ]
+
+
+===========================================================
+ End of Flow
+===========================================================

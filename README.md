@@ -5,6 +5,7 @@ This project demonstrates Infrastructure as Code (IaC), Zero Trust Networking, a
 
 Architecture Overview
 The infrastructure is deployed in the Paris (eu-west-3) region and adheres to Zero Trust principles.
+![SecureCloudShield Operational Workflow & Incident Response](assets/securecloudshield-workflow.png)
 
 Core Components
 Zero Trust Network:
